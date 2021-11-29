@@ -1,11 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
-function App() {
+const App = () => {
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <React.Fragment>
+    <ThemeProvider theme={darkTheme}>
+    <CssBaseline />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -17,8 +29,8 @@ function App() {
         >
           Learn React
         </a>
-      </header>
-    </div>
+    </ThemeProvider>
+    </React.Fragment>
   );
 }
 
