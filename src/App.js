@@ -1,41 +1,70 @@
 import React from 'react';
-import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
-import Paper from '@mui/material/Paper';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Div100vh from 'react-div-100vh';
+import StoryProvider from 'components/StoryProvider';
+import Test from 'story/Test';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import Test from './story/Test';
 
 const App = () => {
   const darkTheme = createTheme({
     palette: {
+      intelligence: {
+        main: '#0277bd',
+      },
+      interpersonal: {
+        main: '#aa00ff',
+      },
+      locomotion: {
+        main: '#f9a825',
+      },
+      physique: {
+        main: '#c62828',
+      },
+      primary: {
+        main: '#c6ff00',
+      },
       mode: 'dark',
     },
   });
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-      <Container maxWidth={'md'}>
-        <Paper>
+    <Div100vh>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <StoryProvider>
           <Test />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </Paper>
-      </Container>
-    </ThemeProvider>
+          {/* <BottomNavigation
+          sx={{ width: 500 }}
+          value={value}
+          onChange={(event, newValue) => setValue(newValue)}>
+          <BottomNavigationAction
+            label="Historia"
+            value="recents"
+            icon={<AutoStoriesIcon />}
+          />
+          <BottomNavigationAction
+            label="Atributos"
+            value="folder"
+            icon={<AccountCircleIcon />}
+          />
+          <BottomNavigationAction
+            label="Inventario"
+            value="favorites"
+            icon={<ListAltIcon />}
+          />
+          <BottomNavigationAction
+            label="Mapa"
+            value="nearby"
+            icon={<LocationOnIcon />}
+          />
+        </BottomNavigation> */}
+        </StoryProvider>
+      </ThemeProvider>
+    </Div100vh>
   );
 };
 

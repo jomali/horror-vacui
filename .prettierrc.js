@@ -7,6 +7,14 @@ module.exports = {
   // justifies the default value for the option.
   // @see: https://prettier.io/docs/en/options.html#arrow-function-parentheses
   arrowParens: 'always',
+  // Put the > of a multi-line HTML (HTML, JSX, Vue, Angular) element at the
+  // end of the last line instead of being alone on the next line (does not
+  // apply to self closing elements).
+  // @see: https://prettier.io/docs/en/options.html#bracket-line
+  bracketSameLine: true,
+  // Print spaces between brackets in object literals.
+  // @see: https://prettier.io/docs/en/options.html#bracket-spacing
+  bracketSpacing: true,
   // For readability we recommend against using more than `80` characters
   // @see: https://prettier.io/docs/en/options.html#print-width
   printWidth: 80,

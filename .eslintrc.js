@@ -45,6 +45,6 @@ module.exports = {
     'no-unused-expressions': 'off',
     'prefer-const': 'error',
     'react/jsx-fragments': 'error',
-    'react/jsx-no-useless-fragment': 'error'
+    'react/jsx-no-useless-fragment': 'error',
   },
 };

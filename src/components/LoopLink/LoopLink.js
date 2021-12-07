@@ -15,8 +15,7 @@ const LoopLink = (props) => {
       }}
       sx={{
         cursor: 'pointer',
-      }}
-    >
+      }}>
       {values[selected]}
     </Link>
   ) : null;

@@ -2,23 +2,24 @@ import React from 'react';
 import Link from '@mui/material/Link';
 
 const ContinueLink = (props) => {
-  const { children, label } = props;
+  const { children, label, onClick, persist = false, selected } = props;
 
-  const [selected, setSelected] = React.useState();
-
-  return Boolean(children) && Boolean(selected) ? (
-    children
-  ) : !Boolean(children) && Boolean(selected) ? (
-    label
-  ) : (
-    <Link
-      onClick={() => setSelected(true)}
-      sx={{
-        cursor: 'pointer',
-      }}
-    >
-      {label}
-    </Link>
+  return (
+    <>
+      &nbsp;
+      {Boolean(selected) && Boolean(persist) ? (
+        <>
+          {label}
+          {children}
+        </>
+      ) : Boolean(selected) ? (
+        { children }
+      ) : (
+        <Link onClick={() => onClick(label, true)} sx={{ cursor: 'pointer' }}>
+          {label}
+        </Link>
+      )}
+    </>
   );
 };
 
